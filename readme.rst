@@ -1,3 +1,5 @@
+program ini adalah program untuk mengelola artikel mudah menggunakan CI versi 3
+
 ###################
 What is CodeIgniter
 ###################
