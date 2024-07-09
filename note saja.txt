@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>
+            blog
+        </title>
+    </head>
+    <body>
+    <h1>Ini adalah artikel terbaru</h1>
+
+    <form> <!--secara default bermethod get-->
+        <input type="text" name="find">
+        <button type="submit">Cari</button>
+
+    </form>
+
+    <a href="<?php echo site_url('blog/add');?>">TAMBAH ARTIKEL</a>
+        
+        <!-- Hallo nama saya <?php //echo $nama?> <br>
+        golongan darah saya adalah <?php //echo $goldarah ?> <br>
+        alamat saya ada di <?php //echo $alamat ?> <br> <br> -->
+
+        <?php foreach($blogs as $key => $blog): ?>
+            <div class="blog">
+                <h1>
+                   <a href="<?php echo site_url('blog/detail/' . $blog['url']); ?>">
+                        <?php echo $blog['title'] ;?>
+                   </a> 
+                </h1>
+                <a href="<?php echo site_url('blog/edit/' . $blog['id']); ?>">EDIT</a>
+                <a href="<?php echo site_url('blog/delete/' . $blog['id']); ?>">DELETE</a>
+
+                <p>
+                    <?php echo $blog['content'];?>
+                </p>
+
+            </div>
+
+        <?php endforeach ?>
+
+    
+    </body>
+</html>
